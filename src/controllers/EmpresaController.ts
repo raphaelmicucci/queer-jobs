@@ -3,22 +3,18 @@ import { Empresa } from "../models/Empresa";
 
 class EmpresaController {
 
-    async findAll(req: Request, res: Response) {
-
-    }
-    async findOne(req: Request, res: Response) {
-        
-    }
     async create(req: Request, res: Response) {
-        const {nome, email} = req.body;
+        const {nome, sobre, imagem_perfil, ano_fundacao, setor, subsetor, num_funcionaries,
+            site, linkedin, instagram, twitter, tiktok, sobre_cultura, sobre_diversidade,
+            funcionaries_lgbtqia, liderancas_lgbtqia, politicas_lgbtqia, id_usuario} = req.body;
         const empresa = await Empresa.create({
-            nome, email
+            nome, sobre, imagem_perfil, ano_fundacao, setor, subsetor, num_funcionaries,
+            site, linkedin, instagram, twitter, tiktok, sobre_cultura, sobre_diversidade,
+            funcionaries_lgbtqia, liderancas_lgbtqia, politicas_lgbtqia, id_usuario
         });
         return res.status(201).json(empresa)
     }
-    async update(req: Request, res: Response) {
-        
-    }
+    
 }
 
 export default new EmpresaController();

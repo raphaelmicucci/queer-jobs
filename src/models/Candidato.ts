@@ -1,5 +1,6 @@
 import { db } from '../db/index';
 import { DataTypes } from 'sequelize';
+import { Usuario } from './Usuario';
 
 export const Candidato = db.define('candidatos', {
     id_candidato: {
@@ -11,9 +12,6 @@ export const Candidato = db.define('candidatos', {
         type: DataTypes.STRING
     },
     foto_perfil: {
-        type: DataTypes.STRING
-    },
-    email: {
         type: DataTypes.STRING
     },
     telefone: {
@@ -36,5 +34,12 @@ export const Candidato = db.define('candidatos', {
     },
     empresa_ideal: {
         type: DataTypes.TEXT
+    },
+    id_usuario: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Usuario,
+            key: "id_usuario"
+        }
     }
 });

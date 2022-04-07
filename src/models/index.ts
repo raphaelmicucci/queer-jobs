@@ -6,9 +6,26 @@ import { Depoimento } from "./Depoimento";
 import { Empresa } from "./Empresa";
 import { Experiencia } from "./Experiencia";
 import { Formacao } from "./Formacao";
+import { Usuario } from "./Usuario";
 import { Vaga } from "./Vaga";
 import { Valor } from "./Valor";
 import { ValorCandidato } from "./ValorCandidato";
+
+// Usuario-Candidato
+Candidato.belongsTo(Usuario, {
+    foreignKey: "id_usuario",
+})
+Usuario.hasOne(Candidato, {
+    foreignKey: "id_usuario",
+})
+
+// Usuario-Empresa
+Empresa.belongsTo(Usuario, {
+    foreignKey: "id_usuario",
+})
+Usuario.hasOne(Empresa, {
+    foreignKey: "id_usuario",
+})
 
 // Certificado-Candidato
 Certificado.belongsTo(Candidato, {
@@ -85,4 +102,4 @@ Candidato.belongsToMany(Valor, {
     through: ValorCandidato
 })
 
-export { Beneficio, Candidato, Candidatura, Certificado, Depoimento, Empresa, Experiencia, Formacao, Vaga }
+export { Beneficio, Candidato, Candidatura, Certificado, Depoimento, Empresa, Experiencia, Formacao, Usuario, Vaga }

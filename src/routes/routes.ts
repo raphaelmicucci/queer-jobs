@@ -4,8 +4,13 @@ import EmpresaController from "../controllers/EmpresaController";
 import CertificadoController from "../controllers/CertificadoController";
 import FormacaoController from "../controllers/FormacaoController";
 import ExperienciaController from "../controllers/ExperienciaController";
+import UsuarioController from "../controllers/UsuarioController";
 
 export const routes = express.Router();
+
+
+// Usuário
+routes.post("/usuario", UsuarioController.create);
 
 
 // Informações básicas

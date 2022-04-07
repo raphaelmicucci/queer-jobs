@@ -1,5 +1,6 @@
 import { db } from '../db/index';
 import { DataTypes } from 'sequelize';
+import { Usuario } from './Usuario';
 
 export const Empresa = db.define('empresas', {
     id_empresa: {
@@ -8,9 +9,6 @@ export const Empresa = db.define('empresas', {
         primaryKey: true
     },
     nome: {
-        type: DataTypes.STRING
-    },
-    email_corp: {
         type: DataTypes.STRING
     },
     sobre: {
@@ -60,5 +58,12 @@ export const Empresa = db.define('empresas', {
     },
     politicas_lgbtqia: {
         type: DataTypes.TEXT
+    },
+    id_usuario: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Usuario,
+            key: "id_usuario"
+        }
     }
 });
