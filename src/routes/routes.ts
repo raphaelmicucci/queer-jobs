@@ -19,7 +19,6 @@ routes.post("/candidatos/certificados", CertificadoController.criarCertificado);
 routes.post("/candidatos/experiencias", ExperienciaController.criarExperiencia);
 
 routes.post("/empresas", EmpresaController.criarEmpresa);
-
 routes.post("/vagas", VagaController.criarVagas);
 routes.get("/vagas", VagaController.listarVagas);
 routes.post("/vagas/beneficios", BeneficioController.criarBeneficio);
