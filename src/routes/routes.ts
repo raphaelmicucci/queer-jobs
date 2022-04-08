@@ -5,42 +5,24 @@ import CertificadoController from "../controllers/CertificadoController";
 import FormacaoController from "../controllers/FormacaoController";
 import ExperienciaController from "../controllers/ExperienciaController";
 import UsuarioController from "../controllers/UsuarioController";
+import VagaController from "../controllers/VagaController";
+import BeneficioController from "../controllers/BeneficioController";
 
 export const routes = express.Router();
 
+routes.post("/usuarios", UsuarioController.criarUsuario);
 
-// Usuário
-routes.post("/usuario", UsuarioController.create);
+routes.post("/candidatos", CandidatoController.criarCandidato);
+routes.put("/candidatos/:id_candidato", CandidatoController.atualizarCandidato);
+routes.post("/candidatos/formacao", FormacaoController.criarFormacao);
+routes.post("/candidatos/certificados", CertificadoController.criarCertificado);
+routes.post("/candidatos/experiencias", ExperienciaController.criarExperiencia);
 
+routes.post("/empresas", EmpresaController.criarEmpresa);
 
-// Informações básicas
-routes.post("/candidato", CandidatoController.create);
+routes.post("/vagas", VagaController.criarVagas);
+routes.get("/vagas", VagaController.listarVagas);
+routes.post("/vagas/beneficios", BeneficioController.criarBeneficio);
 
-// // Sobre você
-// routes.put("/candidato/sobre", CandidatoController.update);
-
-// // Resumo das qualificações
-// routes.post("/candidato/qualificacoes", CandidatoController.create);
-// routes.put("/candidato/qualificacoes", CandidatoController.update);
-
-// Formação acadêmica
-routes.post("/candidato/formacao", FormacaoController.create);
-// routes.put("/Formacao/formacao", FormacaoController.update);
-
-// Cursos e certificados
-routes.post("/candidato/certificados", CertificadoController.create);
-// routes.put("/candidato/certificados", CertificadoController.update);
-
-// Experiências profissionas
-routes.post("/candidato/experiencias", ExperienciaController.create);
-// routes.put("/candidato/experiencias", CandidatoController.update);
-
-// // O que busca em uma empresa?
-// routes.post("/candidato/experiencias", CandidatoController.create);
-// routes.put("/candidato/experiencias", CandidatoController.update);
-
-
-
-routes.post("/empresa", EmpresaController.create);
 
 

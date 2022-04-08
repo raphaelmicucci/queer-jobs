@@ -3,19 +3,31 @@ import { Candidato } from "../models/index";
 
 class CandidatoController {
 
-    async findAll(req: Request, res: Response) {}
+    async criarCandidato(req: Request, res: Response) {
+        const {nome, foto_perfil, telefone,orient_sexual, ident_genero,
+            pronome, data_nasc, empresa_ideal, id_usuario} = req.body;
 
-    async findOne(req: Request, res: Response) {}
-
-    async create(req: Request, res: Response) {
-        const {nome, email, telefone} = req.body;
-        const candidato = await Candidato.create({
-            nome, email, telefone
+        const novoCandidato = await Candidato.create({
+            nome, foto_perfil, telefone, orient_sexual, ident_genero,
+            pronome, data_nasc, empresa_ideal, id_usuario
         });
-        return res.status(201).json(candidato)
+        return res.status(201).json(novoCandidato)
     }
 
-    async update(req: Request, res: Response) {}
+    async atualizarCandidato(req: Request, res: Response) {
+        const { id_candidato } = req.params;
+        const {nome, foto_perfil, telefone, orient_sexual, ident_genero,
+            pronome, data_nasc, resumo_qualificacoes, empresa_ideal} = req.body;
+
+        const candidatoAtualizado = await Candidato.update({
+            nome, foto_perfil, telefone, orient_sexual, ident_genero,
+            pronome, data_nasc, resumo_qualificacoes, empresa_ideal
+        },{
+            where: {id_candidato} 
+        });
+
+        return res.status(200).json("Candidato atualizado")
+    }
 }
 
 export default new CandidatoController();

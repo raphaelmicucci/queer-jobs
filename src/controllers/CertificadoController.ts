@@ -3,19 +3,13 @@ import { Certificado } from "../models/index";
 
 class CertificadoController {
 
-    async findAll(req: Request, res: Response) {}
-
-    async findOne(req: Request, res: Response) {}
-
-    async create(req: Request, res: Response) {
+    async criarCertificado(req: Request, res: Response) {
         const { area_estudo, instituicao, modalidade, data_inicio, data_fim, id_candidato } = req.body;
-        const certificado = await Certificado.create({
+        const novoCertificado = await Certificado.create({
             area_estudo, instituicao, modalidade, data_inicio, data_fim, id_candidato
         });
-        return res.status(201).json(certificado)
+        return res.status(201).json(novoCertificado)
     }
-
-    async update(req: Request, res: Response) {}
 }
 
 export default new CertificadoController();

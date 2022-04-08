@@ -4,15 +4,15 @@ import * as bcrypt from "bcrypt";
 
 class UsuarioController {
 
-    async create(req: Request, res: Response) {
+    async criarUsuario(req: Request, res: Response) {
         const {nome, email, senha} = req.body;
 
         const novaSenha = bcrypt.hashSync(senha, 10);
 
-        const usuario = await Usuario.create({
+        const novoUsuario = await Usuario.create({
             nome, email, senha: novaSenha
         });
-        return res.status(201).json(usuario)
+        return res.status(201).json(novoUsuario)
     }
 }
 
