@@ -54,7 +54,7 @@
 Exemplo de JSON:
 
         {
-		    "formacao": "",
+		"formacao": "",
 	    	"status": "",
 	    	"grau": "",
 	    	"curso": "",
@@ -69,26 +69,27 @@ Exemplo de JSON:
 Exemplo de JSON:
  
       {
-		   "area_estudo": "",
-			"instituicao": "",
-			"modalidade": "",
-			"data_inicio": "AAAA-MM-DD",
-			"data_fim": "AAAA-MM-DD",
-			"id_candidato": 0
+		"area_estudo": "",
+		"instituicao": "",
+		"modalidade": "",
+		"data_inicio": "AAAA-MM-DD",
+		"data_fim": "AAAA-MM-DD",
+		"id_candidato": 0
     	}
+	
  - **POST** /candidatos/experiencias
  
  Exemplo de JSON:
 
      
         {
-      "empresa": "",
-      "cargo": "",
-      "data_inicio": "AAAA-MM-DD",
-      "data_fim": "AAAA-MM-DD",
-      "modalidade": "",
-      "id_candidato": 0
-    }
+	      "empresa": "",
+	      "cargo": "",
+	      "data_inicio": "AAAA-MM-DD",
+	      "data_fim": "AAAA-MM-DD",
+	      "modalidade": "",
+	      "id_candidato": 0
+  	}
 	
  ***
  - **POST** /empresas
@@ -104,6 +105,7 @@ Exemplo de JSON:
           "politicas_lgbtqia": "Comitê de Diversidade: O objetivo do Comitê é ser um braço para ações que envolvem Diversidade e Inclusão na empresa, garantindo que seremos uma empresa que gera oportunidades, acolhe e inclui pessoas de grupos minoritários. O conselho apoia todas as ações que envolvem o tema, validando, sugerindo e trazendo reflexões; Agenda de treinamento de gestores para a diversidade e para o diálogo do respeito; Benefícios de saúde a casais LGBTI+, como licenças parentais estendidas – maternidade de seis meses e paternidade de 40 dias –, além do berçário, sem custo, para pais e mães, independentemente do gênero ou orientação sexual.",
           "id_usuario": 84
        }
+       
  - **POST** /vagas
  
  Exemplo de JSON:
